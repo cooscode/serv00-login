@@ -91,7 +91,7 @@ async def main():
             now_beijing = format_to_iso(datetime.utcnow() + timedelta(hours=8))
             success_message = f'账号 {username} 于北京时间 {now_beijing}（UTC时间 {now_utc}）登录成功！'
             message += success_message + '\n'
-            print('账号于北京时间 {now_beijing}（UTC时间 {now_utc}）登录成功！')
+            print(f'账号于北京时间 {now_beijing}（UTC时间 {now_utc}）登录成功！')
         else:
             message += f'账号{username}登录失败，请检查账号和密码是否正确。\n'
             print(f'账号登录失败，请检查账号和密码是否正确。')
