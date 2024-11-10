@@ -101,7 +101,7 @@ async def main():
         
     message += f'所有{serviceName}账号登录完成！'
     await send_telegram_message(message)
-    print(f'所有{serviceName}账号登录完成！')
+    print(f'所有账号登录完成！')
 
 async def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -126,6 +126,8 @@ async def send_telegram_message(message):
         response = requests.post(url, json=payload, headers=headers)
         if response.status_code != 200:
             print(f"发送消息到Telegram失败: {response.text}")
+        else:
+            print("Post message successfully!")
     except Exception as e:
         print(f"发送消息到Telegram时出错: {e}")
 
